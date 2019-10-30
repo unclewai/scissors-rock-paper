@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div id="bot-placeholder">
-      <img src="/images/Placeholder-Bot.png">
+      <img :src="bot_image">
     </div>
     <div id="you-placeholder">
-      <img src="/images/Placeholder-You.png">
+      <img :src="you_image">
     </div>
     <div id="buttons-container">
       <div id="btn-paper" @click="() => userPicked(1)"></div>
@@ -64,6 +64,7 @@ export default {
         console.log(botPicked);
         /* eslint-enable no-console */
 
+        
         if ( userPicked == botPicked ) {
           this.botChoice = botPicked + 100;
           this.userChoice = userPicked + 100;
@@ -74,6 +75,7 @@ export default {
           this.botChoice = botPicked * 10;
           this.userChoice = userPicked * -10;
         }
+
       }
     }  
 }
